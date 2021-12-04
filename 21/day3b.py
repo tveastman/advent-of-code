@@ -2,12 +2,16 @@ from enum import Enum, auto
 
 from rich import print
 from rich.console import Console
+
 console = Console()
 
 console.rule("START")
+
+
 class Mode(Enum):
     o2 = auto()
     co2 = auto()
+
 
 # read
 with open("day3a-input.txt") as f:
