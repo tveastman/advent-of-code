@@ -5,8 +5,9 @@ start_time = time.perf_counter()
 from collections import defaultdict
 from dataclasses import dataclass
 
-from aocd import data, submit
+from aocd import get_data, submit
 from rich.console import Console
+data = get_data(year=2021, day=5)
 
 c = Console()
 c.rule("START")
