@@ -28,15 +28,15 @@ def total_fuel_cost(positions, destination):
 
 
 crab_positions = [int(i) for i in data.split(",")]
-crab_positions.sort()
-min_pos, max_pos = min(crab_positions), max(crab_positions)
-all_positions = range(min_pos, max_pos + 1)
+all_positions = range(min(crab_positions), max(crab_positions) + 1)
 
 # (commentary) I spent 10 minutes trying to work out how to use
 # 'bisect' to do a binary search, because I assumed it would take
 # too long to calculate the fuel cost for every possible position.
 # but it actually only took a half a second to do them all so ¯\_(ツ)_/¯
-all_fuel_costings = [total_fuel_cost(crab_positions, i) for i in all_positions]
+all_fuel_costings = [
+    total_fuel_cost(crab_positions, destination) for destination in all_positions
+]
 answer = min(all_fuel_costings)
 
 print(f"{answer = }")
