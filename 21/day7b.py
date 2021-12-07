@@ -44,3 +44,9 @@ print(f"{answer = }")
 c.rule(f"FINISH {time.perf_counter() - start_time}")
 
 submit(answer, day=DAY, part="b", year=YEAR)
+
+# from matplotlib import pyplot as plt
+# plt.plot(all_fuel_costings)
+# plt.xlabel("crab destination")
+# plt.ylabel("overall fuel cost")
+# plt.show()
