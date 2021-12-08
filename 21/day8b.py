@@ -45,11 +45,18 @@ def solve_entry(entry: Entry):
     key[8] = set(entry.patterns[9])
     map["a"] = key[7].difference(key[1]).pop()
 
+    # What follows is deducing the rest of the numbers by intersecting
+    # known ones with unknown ones. For example: if you subtract
+    # key[1] from all the patterns that are 'wires' long, you know
+    # that the one with length 3 is actually digit 3, while the other
+    # two must be 5 and 2, and can work out which is which by...
     for pattern in entry.get_unsolved_of_length(5, key):
         # these are all the patterns of length 5
         c.print(f"{pattern - key[1]=}")
         if len(pattern - key[1]) == 3:
             key[3] = pattern
+
+    # ... subtracting the segments for '4' from them.
     for pattern in entry.get_unsolved_of_length(5, key):
         c.print(f"{pattern - key[4]=}")
         if len(pattern - key[4]) == 2:
@@ -57,12 +64,13 @@ def solve_entry(entry: Entry):
         else:
             key[2] = pattern
 
-    print("stage 3")
+    # ...and so on...
     for pattern in entry.get_unsolved_of_length(6, key):
         c.print(f"{pattern - key[1]=}")
         if len(pattern - key[1]) == 5:
             key[6] = pattern
-    print("stage 4")
+
+    # ...this was a hateful exercise...
     for pattern in entry.get_unsolved_of_length(6, key):
         c.print(f"{pattern - key[3]=}")
         if len(pattern - key[3]) == 1:
