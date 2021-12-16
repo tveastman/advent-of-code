@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Dict
+import typing
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional
 from enum import Enum
 from io import StringIO
 
@@ -72,8 +73,8 @@ class Packet:
     version: Optional[int] = None
     type: Optional[PacketType] = None
 
-    subpackets: List[Packet] = None
     literal_value: Optional[int] = None
+    subpackets: List[Packet] = field(default_factory=list)
 
     def value(self):
         if self.type is PacketType.literal:
@@ -99,13 +100,14 @@ class Packet:
             a, b = self.subpacket_values()
             return 1 if a == b else 0
 
-    def subpacket_values(self):
-        return [subpacket.value() for subpacket in self.subpackets]
+    def subpacket_values(self) -> typing.Generator[int, None, None]:
+        return (subpacket.value() for subpacket in self.subpackets)
 
     def sum_version_numbers(self) -> int:
         total = 0
         if self.subpackets:
             total += sum(sub.sum_version_numbers() for sub in self.subpackets)
+        assert self.version is not None
         total += self.version
         return total
 
@@ -133,7 +135,7 @@ class Packet:
 
     @classmethod
     def _read_type_1_packets(cls, binary: StringIO) -> List[Packet]:
-        packets = []
+        packets: List[Packet] = []
         n_packets = int(binary.read(11), 2)
         while len(packets) < n_packets:
             packets.append(cls.read(binary))
@@ -142,7 +144,7 @@ class Packet:
         return packets
 
     @classmethod
-    def read(cls, binary: StringIO) -> ParseResult:
+    def read(cls, binary: StringIO) -> Packet:
         p = Packet()
         p.version = int(binary.read(3), 2)
         p.type = PacketType(int(binary.read(3), 2))
