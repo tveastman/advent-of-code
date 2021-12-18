@@ -211,13 +211,14 @@ assert (
     == [[[[8, 7], [7, 7]], [[8, 6], [7, 7]]], [[[0, 7], [6, 6]], [8, 7]]]
 )
 
+# part a
 final_answer = add_text_list(data)
 c.print(f"{final_answer = }")
 c.print(f"{magnitude(final_answer) = }")
 
+# part b
 sns = parse(data)
 c.print(sns)
-
 best_magnitude = 0
 all_permutations = list(itertools.permutations(sns, 2))
 c.print(f"{len(all_permutations)}")
