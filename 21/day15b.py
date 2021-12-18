@@ -104,17 +104,18 @@ nodes, end = multiply_map(nodes, 5)
 # c.print(nodes, end)
 
 g = build_graph(nodes)
-#c.print(g)
+# c.print(g)
 
 start = nodes[Point(0, 0)]
 
 start_time = time.perf_counter()
 sp = shortest_path(g, start, end, weight="r")
-#c.print(sp)
+# c.print(sp)
 
 cost_of_shortest_path = sum(node.r for node in sp[1:])
 c.print(f"{cost_of_shortest_path = }")
 c.rule(f"FINISH {time.perf_counter() - start_time}")
+
 
 def print_path(nodes, sp):
     sp = set(sp)
@@ -131,4 +132,5 @@ def print_path(nodes, sp):
                 line.append(str(n.r))
         c.print("".join(line))
 
-#print_path(nodes, sp)
+
+# print_path(nodes, sp)
