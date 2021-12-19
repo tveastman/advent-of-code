@@ -154,7 +154,7 @@ data = """--- scanner 0 ---
 -652,-548,-490
 30,-46,-14
 """
-# data = get_data(year=YEAR, day=DAY)
+data = get_data(year=YEAR, day=DAY)
 
 c.rule("START")
 
