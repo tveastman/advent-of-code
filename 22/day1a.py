@@ -10,7 +10,7 @@ c = Console()
 start_time = time.perf_counter()
 data = get_data(year=YEAR, day=DAY)
 c.rule("Advent of Code")
-groups = [j.split() for j in data.split('\n\n')]
+groups = [j.split() for j in data.split("\n\n")]
 sums = [sum(int(i) for i in j) for j in groups]
 largest_sum = max(sums)
 c.rule("Finished")
