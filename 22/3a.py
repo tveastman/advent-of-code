@@ -18,11 +18,13 @@ c.rule(f"Advent of Code {YEAR}-{DAY}{PART}")
 def priority(i):
     return 27 + ord(i) - ord("A") if i.isupper() else 1 + ord(i) - ord("a")
 
+
 def intersected(line):
     l = len(line)
-    a, b  = set(line[:l//2]), set(line[l//2:])
+    a, b = set(line[: l // 2]), set(line[l // 2 :])
     intersected = a.intersection(b).pop()
     return priority(intersected)
+
 
 answer = sum(intersected(line) for line in lines(data))
 print("answer", answer)

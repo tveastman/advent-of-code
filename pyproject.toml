@@ -1,13 +1,14 @@
 [tool.poetry]
-name = "advent-of-code-2022"
+name = "advent-of-code"
 version = "0.1.0"
 description = ""
-authors = ["Tom Eastman <tom@eastman.nz>"]
+authors = []
 
 [tool.poetry.dependencies]
 python = "^3.10"
 aocd = "^0.1"
 rich = "^12.6.0"
+more-itertools = "^9.0.0"
 
 [tool.poetry.dev-dependencies]
 

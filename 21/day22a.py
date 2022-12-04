@@ -20,7 +20,7 @@ c = Console()
 print = c.print
 
 data = get_data(year=YEAR, day=DAY)
-#print(data)
+# print(data)
 c.rule("START")
 
 
@@ -34,7 +34,6 @@ class P:
     x: int
     y: int
     z: int
-
 
 
 @dataclass(frozen=True)
@@ -71,11 +70,12 @@ class C:
     @__contains__.register
     def _(self, other: P) -> bool:
         result = (
-           self.min.x <= other.x <= self.max.x and
-           self.min.y <= other.y <= self.max.y and
-           self.min.z <= other.z <= self.max.z
+            self.min.x <= other.x <= self.max.x
+            and self.min.y <= other.y <= self.max.y
+            and self.min.z <= other.z <= self.max.z
         )
         return result
+
 
 # TIL you have to register a dispatch for the class *after*
 # the class has been created, so this has to sit outside
@@ -85,14 +85,16 @@ class C:
 def _(self, other: C) -> bool:
     return other.min in self and other.max in self
 
+
 InstructionsType = List[Tuple[Switch, C]]
+
 
 def parse(data) -> InstructionsType:
     instructions = []
-    for line in data.strip().split('\n'):
+    for line in data.strip().split("\n"):
         i, line = line.split()
         instruction = Switch(i)
-        x, y, z  = line.split(",")
+        x, y, z = line.split(",")
         xmin, xmax = x.split("=")[1].split("..")
         ymin, ymax = y.split("=")[1].split("..")
         zmin, zmax = z.split("=")[1].split("..")
@@ -100,6 +102,7 @@ def parse(data) -> InstructionsType:
         pmax = P(int(xmax), int(ymax), int(zmax))
         instructions.append((instruction, C(pmin, pmax)))
     return instructions
+
 
 instructions = parse(data)
 
@@ -127,4 +130,3 @@ b = C(min=P(x=0, y=0, z=0), max=P(x=0, y=5, z=0))
 c.print(f"{a.intersection(b) = }")
 
 c.rule(f"FINISH {time.perf_counter() - start_time}")
-
