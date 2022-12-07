@@ -15,6 +15,7 @@ c.rule(
 )  # ##########################################################
 # print(puzzle.input_data)
 
+
 def parse_diagram():
     stacks = defaultdict(list)
     for line in puzzle.input_data.splitlines():
@@ -26,6 +27,8 @@ def parse_diagram():
     for key in stacks:
         stacks[key] = stacks[key][::-1]
     return stacks
+
+
 stacks = parse_diagram()
 print(stacks)
 
@@ -45,5 +48,5 @@ for i in range(1, 10):
 
 
 c.rule("END")  # ##########################################################
-#puzzle.answer_a = result
+# puzzle.answer_a = result
 puzzle.answer_b = result

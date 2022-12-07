@@ -25,8 +25,8 @@ for i, char in enumerate(puzzle.input_data):
         if len(s) == sequence_length:
             break
 
-print(i+1)
+print(i + 1)
 
 c.rule("END")  # ##########################################################
-#puzzle.answer_a = i+1
+# puzzle.answer_a = i+1
 puzzle.answer_b = i + 1
