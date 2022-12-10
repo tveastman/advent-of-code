@@ -68,9 +68,9 @@ for y in range(size):
     for x in range(size):
         p = P(x, y)
         if p in visible_trees:
-            print(f"[yellow]{points[p]}[/]", end="")
+            print(f"[bold][yellow]{points[p]} [/][/]", end="")
         else:
-            print(f"[green]{points[p]}[/]", end="")
+            print(f"[black]{points[p]} [/]", end="")
     print()
 
 
