@@ -9,6 +9,7 @@ python = "^3.10"
 aocd = "^0.1"
 rich = "^12.6.0"
 more-itertools = "^9.0.0"
+networkx = "^2.8.8"
 
 [tool.poetry.dev-dependencies]
 
