@@ -10,6 +10,7 @@ aocd = "^0.1"
 rich = "^12.6.0"
 more-itertools = "^9.0.0"
 networkx = "^2.8.8"
+sortedcontainers = "^2.4.0"
 
 [tool.poetry.dev-dependencies]
 
