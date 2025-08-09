@@ -1,20 +1,15 @@
-[tool.poetry]
+[project]
 name = "advent-of-code"
 version = "0.1.0"
-description = ""
-authors = []
-
-[tool.poetry.dependencies]
-python = "^3.10"
-aocd = "^0.1"
-rich = "^12.6.0"
-more-itertools = "^9.0.0"
-networkx = "^2.8.8"
-sortedcontainers = "^2.4.0"
-intervaltree = "^3.1.0"
-
-[tool.poetry.dev-dependencies]
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "advent-of-code-data>=2.1.0",
+    "attrs>=25.3.0",
+    "cattrs>=25.1.1",
+    "click>=8.2.1",
+    "networkx>=3.5",
+    "rich>=14.1.0",
+    "ruff>=0.12.8",
+]
