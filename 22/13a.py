@@ -94,6 +94,7 @@ puzzle.answer_a = sum(in_the_right_order)
 TWO = (2,)
 SIX = (6,)
 
+
 # part 2
 class SortablePacket:
     def __init__(self, packet):

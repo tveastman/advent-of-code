@@ -14,6 +14,8 @@ c = Console()
 start_time = time.perf_counter()
 data = get_data(year=YEAR, day=DAY)
 c.rule(f"Advent of Code {YEAR}-{DAY}{PART}")
+
+
 ###################################################################################
 def priority(i):
     return 27 + ord(i) - ord("A") if i.isupper() else 1 + ord(i) - ord("a")

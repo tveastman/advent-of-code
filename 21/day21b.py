@@ -50,9 +50,9 @@ def go(p1, p2, universes, current_universe_count):
                                 pos = smod(p2.pos + roll, 1, 10)
                                 score = p2.score + pos
                                 new_player2 = Player(pos, score)
-                                universes[
-                                    (new_player1, new_player2)
-                                ] += current_universe_count
+                                universes[(new_player1, new_player2)] += (
+                                    current_universe_count
+                                )
 
 
 p1 = Player(pos=6)

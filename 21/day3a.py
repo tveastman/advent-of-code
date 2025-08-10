@@ -14,6 +14,7 @@ for number in input:
         transposed[d].append(int(digit))
 print("transposed:", transposed)
 
+
 # count
 def count(digits):
     # return (gamma_bit, epsilon_bit)
