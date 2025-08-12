@@ -1,4 +1,3 @@
-from enum import Enum, auto, IntEnum
 
 from aocd.transforms import lines
 

@@ -1,6 +1,5 @@
 from dataclasses import dataclass
-from functools import lru_cache
-from itertools import combinations, product, permutations, combinations_with_replacement
+from itertools import product
 from typing import Tuple, Set, List
 
 YEAR = 2021

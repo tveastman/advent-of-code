@@ -1,9 +1,5 @@
-import humanize
 import rich.console
 from aocd.models import Puzzle
-from collections import defaultdict
-import networkx as nx
-import pyparsing as pp
 
 
 YEAR = 2023

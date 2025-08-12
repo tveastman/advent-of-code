@@ -1,6 +1,5 @@
 import rich.console
 from aocd.models import Puzzle
-from collections import defaultdict
 
 YEAR = 2015
 DAY = 4

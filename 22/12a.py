@@ -1,17 +1,10 @@
-import modulefinder
-import operator
 import string
-import sys
-from collections import defaultdict, deque
-from dataclasses import dataclass, field
-from functools import reduce
-from pathlib import PurePath, PurePosixPath
-from typing import List, Dict
+from dataclasses import dataclass
+from typing import Dict
 
 import networkx
 import rich.console
 from aocd.models import Puzzle
-from more_itertools import chunked
 from networkx import shortest_path
 from rich import print
 

@@ -1,7 +1,4 @@
-from collections import defaultdict, deque
-from dataclasses import dataclass, field
-from pathlib import PurePath, PurePosixPath
-from typing import List
+from dataclasses import dataclass
 
 import rich.console
 from aocd.models import Puzzle

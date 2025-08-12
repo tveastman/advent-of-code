@@ -1,17 +1,13 @@
-from collections import defaultdict
-from dataclasses import dataclass, field
-from functools import lru_cache
-from itertools import combinations, product, permutations, combinations_with_replacement
-from typing import Tuple, Set, List, Dict, DefaultDict, Optional, FrozenSet
+from dataclasses import dataclass
+from typing import Optional
 import re
 
-from more_itertools import chunked
 
 YEAR = 2021
 DAY = 13
 
 import time
-from aocd import get_data, submit
+from aocd import get_data
 from rich.console import Console
 
 start_time = time.perf_counter()

@@ -1,6 +1,5 @@
 import rich.console
-import click
-from aocd.models import Puzzle, User
+from aocd.models import Puzzle
 
 c = rich.console.Console()
 year = 2019

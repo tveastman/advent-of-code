@@ -1,4 +1,3 @@
-import sys
 from dataclasses import dataclass
 from typing import List, Dict
 
@@ -9,7 +8,7 @@ YEAR = 2021
 DAY = 15
 
 import time
-from aocd import get_data, submit
+from aocd import get_data
 from rich.console import Console
 
 start_time = time.perf_counter()

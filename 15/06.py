@@ -1,7 +1,5 @@
 import rich.console
 from aocd.models import Puzzle
-from collections import defaultdict
-from itertools import batched
 import re
 from attrs import frozen
 import cattrs
@@ -95,7 +93,6 @@ parser = re.compile(
     re.VERBOSE,
 )
 
-import dataclasses
 
 
 @frozen

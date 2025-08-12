@@ -1,25 +1,11 @@
-import modulefinder
-import operator
 import re
-import signal
-import string
-import sys
-from collections import defaultdict, deque
-from dataclasses import dataclass, field
-from enum import Enum, auto
-from functools import reduce
-from pathlib import PurePath, PurePosixPath
-from typing import List, Dict, Optional
+from dataclasses import dataclass
+from typing import Dict
 
-import networkx
 import rich.console
-import sortedcontainers
 from aocd.models import Puzzle
 from intervaltree import IntervalTree, Interval
-from more_itertools import chunked
-from networkx import shortest_path
 from rich import print
-from sortedcontainers import SortedSet
 
 YEAR = 2022
 DAY = 15

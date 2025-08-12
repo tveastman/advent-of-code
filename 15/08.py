@@ -1,14 +1,5 @@
 import rich.console
 from aocd.models import Puzzle
-from collections import defaultdict
-from itertools import batched
-import re
-import typing
-from attrs import define
-import cattrs
-from functools import partial, cache
-import pyparsing as pp
-import operator
 
 YEAR = 2015
 DAY = 8

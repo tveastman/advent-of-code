@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import ast
 import itertools
-from dataclasses import dataclass
 from typing import Tuple
 
 import re
@@ -11,7 +10,7 @@ YEAR = 2021
 DAY = 18
 
 import time
-from aocd import get_data, submit
+from aocd import get_data
 from rich.console import Console
 
 start_time = time.perf_counter()

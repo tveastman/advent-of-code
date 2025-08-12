@@ -1,10 +1,6 @@
-from collections import defaultdict, deque
-from dataclasses import dataclass
-from pathlib import PurePath, PurePosixPath
 
 import rich.console
 from aocd.models import Puzzle
-from more_itertools import chunked
 from rich import print
 
 YEAR = 2022

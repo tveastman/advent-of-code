@@ -1,15 +1,13 @@
 from __future__ import annotations
 
 from collections import defaultdict
-from dataclasses import dataclass, field
-from itertools import product
-from typing import Dict
+from dataclasses import dataclass
 
 YEAR = 2021
 DAY = 21
 
 import time
-from aocd import get_data, submit
+from aocd import get_data
 from rich.console import Console
 
 start_time = time.perf_counter()

@@ -1,11 +1,9 @@
 from __future__ import annotations
 
 from collections import defaultdict
-from dataclasses import dataclass, field
 import re
-from typing import Any, Optional, Dict, Tuple, DefaultDict
+from typing import Tuple, DefaultDict
 
-from more_itertools import chunked
 
 YEAR = 2021
 DAY = 14

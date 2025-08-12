@@ -1,21 +1,9 @@
-import modulefinder
-import operator
-import signal
-import string
-import sys
-from collections import defaultdict, deque
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum, auto
-from functools import reduce
-from pathlib import PurePath, PurePosixPath
 from typing import List, Dict, Optional
 
-import networkx
 import rich.console
-import sortedcontainers
 from aocd.models import Puzzle
-from more_itertools import chunked
-from networkx import shortest_path
 from rich import print
 from sortedcontainers import SortedSet
 

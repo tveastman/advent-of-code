@@ -1,9 +1,7 @@
-from collections import defaultdict, deque
-from dataclasses import dataclass
+from collections import deque
 
 import rich.console
 from aocd.models import Puzzle
-from more_itertools import chunked
 
 YEAR = 2022
 DAY = 6

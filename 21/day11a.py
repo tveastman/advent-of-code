@@ -1,9 +1,7 @@
 from dataclasses import dataclass, field
-from functools import lru_cache
-from itertools import combinations, product, permutations, combinations_with_replacement
-from typing import Tuple, Set, List, Dict
+from itertools import product
+from typing import List, Dict
 
-from more_itertools import chunked
 
 YEAR = 2021
 DAY = 11

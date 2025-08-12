@@ -1,15 +1,10 @@
-import modulefinder
 import operator
-import sys
-from collections import defaultdict, deque
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from functools import reduce
-from pathlib import PurePath, PurePosixPath
 from typing import List
 
 import rich.console
 from aocd.models import Puzzle
-from more_itertools import chunked
 from rich import print
 
 YEAR = 2022

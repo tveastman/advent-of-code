@@ -1,4 +1,3 @@
-from enum import Enum, auto, IntEnum
 from itertools import islice
 
 from aocd.transforms import lines

@@ -1,4 +1,3 @@
-from enum import Enum, auto, IntEnum
 
 YEAR = 2022
 DAY = 2

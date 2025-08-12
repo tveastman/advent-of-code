@@ -1,5 +1,4 @@
 from collections import defaultdict
-from dataclasses import dataclass
 
 import rich.console
 from aocd.models import Puzzle

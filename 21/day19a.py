@@ -1,18 +1,16 @@
 from __future__ import annotations
 
-import ast
 import itertools
 from dataclasses import dataclass
 from functools import lru_cache
-from typing import Tuple, List, Dict, FrozenSet, Set
+from typing import Tuple, Set
 
-import re
 
 YEAR = 2021
 DAY = 19
 
 import time
-from aocd import get_data, submit
+from aocd import get_data
 from rich.console import Console
 
 start_time = time.perf_counter()

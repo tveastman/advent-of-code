@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import typing
 from dataclasses import dataclass, field
-from typing import List, Dict, Optional
+from typing import List, Optional
 from enum import Enum
 from io import StringIO
 
@@ -10,7 +10,7 @@ YEAR = 2021
 DAY = 16
 
 import time
-from aocd import get_data, submit
+from aocd import get_data
 from rich.console import Console
 
 start_time = time.perf_counter()
