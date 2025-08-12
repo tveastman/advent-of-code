@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.12"
 
 [[package]]
@@ -11,6 +11,7 @@ dependencies = [
     { name = "attrs" },
     { name = "cattrs" },
     { name = "click" },
+    { name = "humanize" },
     { name = "networkx" },
     { name = "pyparsing", extra = ["diagrams"] },
     { name = "rich" },
@@ -23,6 +24,7 @@ requires-dist = [
     { name = "attrs", specifier = ">=25.3.0" },
     { name = "cattrs", specifier = ">=25.1.1" },
     { name = "click", specifier = ">=8.2.1" },
+    { name = "humanize", specifier = ">=4.12.3" },
     { name = "networkx", specifier = ">=3.5" },
     { name = "pyparsing", extras = ["diagrams"], specifier = ">=3.2.3" },
     { name = "rich", specifier = ">=14.1.0" },
@@ -108,6 +110,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44", size = 27697, upload-time = "2022-10-25T02:36:22.414Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6", size = 25335, upload-time = "2022-10-25T02:36:20.889Z" },
+]
+
+[[package]]
+name = "humanize"
+version = "4.12.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/22/d1/bbc4d251187a43f69844f7fd8941426549bbe4723e8ff0a7441796b0789f/humanize-4.12.3.tar.gz", hash = "sha256:8430be3a615106fdfceb0b2c1b41c4c98c6b0fc5cc59663a5539b111dd325fb0", size = 80514, upload-time = "2025-04-30T11:51:07.98Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a0/1e/62a2ec3104394a2975a2629eec89276ede9dbe717092f6966fcf963e1bf0/humanize-4.12.3-py3-none-any.whl", hash = "sha256:2cbf6370af06568fa6d2da77c86edb7886f3160ecd19ee1ffef07979efc597f6", size = 128487, upload-time = "2025-04-30T11:51:06.468Z" },
 ]
 
 [[package]]
