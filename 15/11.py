@@ -16,36 +16,41 @@ c.rule(f"{puzzle.title} ({YEAR}-{DAY})")
 
 
 import string
+
 alphabet = list(string.ascii_lowercase)
-alphabet.remove('i')
-alphabet.remove('o')
-alphabet.remove('l')
+alphabet.remove("i")
+alphabet.remove("o")
+alphabet.remove("l")
 print(f"{alphabet=}")
+
 
 @cache
 def index_of(chr) -> int:
     return alphabet.index(chr)
 
-def increment(pw, index = -1) -> None:
+
+def increment(pw, index=-1) -> None:
     current = pw[index]
     new_index = index_of(current) + 1
     if new_index == len(alphabet):
         new_index = 0
-        increment(pw, index-1)
+        increment(pw, index - 1)
     pw[index] = alphabet[new_index]
+
 
 def straight(pw):
     for i in range(0, len(pw) - 2):
-        a, b, c = pw[i], pw[i+1], pw[i+2]
+        a, b, c = pw[i], pw[i + 1], pw[i + 2]
         if ord(c) - ord(b) == 1 and ord(b) - ord(a) == 1:
             return True
     return False
+
 
 def two_pairs(pw):
     i = 0
     pairs = []
     while i < len(pw) - 1:
-        a, b = pw[i], pw[i+1]
+        a, b = pw[i], pw[i + 1]
         if a == b and a not in pairs:
             i += 1
             pairs.append(a)
@@ -53,6 +58,7 @@ def two_pairs(pw):
                 return True
         i += 1
     return False
+
 
 pw = list(puzzle.input_data)
 counter = 0

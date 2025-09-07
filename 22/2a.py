@@ -1,4 +1,3 @@
-
 YEAR = 2022
 DAY = 2
 PART = "a"

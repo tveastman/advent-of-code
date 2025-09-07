@@ -24,7 +24,8 @@ MAX_CONTAINERS = 11
 smallest_set = None
 total_solutions = 0
 import itertools
-for num_containers in range(MIN_CONTAINERS, MAX_CONTAINERS+1):
+
+for num_containers in range(MIN_CONTAINERS, MAX_CONTAINERS + 1):
     solutions = 0
     for combination in itertools.combinations(containers, num_containers):
         if sum(combination) == TARGET:

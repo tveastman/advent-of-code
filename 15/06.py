@@ -94,7 +94,6 @@ parser = re.compile(
 )
 
 
-
 @frozen
 class Command:
     command: str

@@ -11,6 +11,7 @@ puzzle = Puzzle(year=YEAR, day=DAY)
 c.rule(f"{puzzle.title} ({YEAR}-{DAY})")
 
 import re
+
 line_re = re.compile(
     r"(\w+) would (gain|lose) (\d+) happiness units by sitting next to (\w+)"
 )
@@ -29,7 +30,7 @@ David would lose 7 happiness units by sitting next to Bob.
 David would gain 41 happiness units by sitting next to Carol.
 """
 
-#lines = example.splitlines()
+# lines = example.splitlines()
 lines = puzzle.input_data.splitlines()
 
 type Config = dict[tuple[str, str], int]
@@ -37,12 +38,13 @@ config: Config = {}
 attendees: set[str] = set()
 for line in lines:
     groups = line_re.match(line).groups()
-    change = int(groups[2]) if groups[1] == 'gain' else int(groups[2]) * -1
+    change = int(groups[2]) if groups[1] == "gain" else int(groups[2]) * -1
     config[groups[0], groups[3]] = change
     attendees.add(groups[0])
 
 print(config)
 print(attendees)
+
 
 def score(arrangement: tuple[str, ...], config: Config) -> int:
     len_arrangement = len(arrangement)
@@ -50,15 +52,19 @@ def score(arrangement: tuple[str, ...], config: Config) -> int:
     for i in range(len_arrangement):
         l = (i - 1) % len_arrangement
         r = (i + 1) % len_arrangement
-        score += config[arrangement[i], arrangement[l]] + config[arrangement[i], arrangement[r]]
+        score += (
+            config[arrangement[i], arrangement[l]]
+            + config[arrangement[i], arrangement[r]]
+        )
     return score
+
 
 def score_b(arrangement: tuple[str, ...], config: Config) -> int:
     len_arrangement = len(arrangement)
     score = 0
     for i in range(len_arrangement):
-        l = (i - 1)
-        r = (i + 1)
+        l = i - 1
+        r = i + 1
         if r != len_arrangement:
             score += config[arrangement[i], arrangement[r]]
         if l != -1:
@@ -83,4 +89,3 @@ for permutation in itertools.permutations(list(attendees)):
     max_score = new_score if new_score > max_score else max_score
 print(f"{max_score=}")
 puzzle.answer_b = max_score
-

@@ -1,4 +1,3 @@
-
 import rich.console
 from aocd.models import Puzzle
 from rich import print

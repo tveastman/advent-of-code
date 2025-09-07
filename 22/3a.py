@@ -1,4 +1,3 @@
-
 from aocd.transforms import lines
 
 YEAR = 2022

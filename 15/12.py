@@ -19,6 +19,7 @@ import json
 document = json.loads(puzzle.input_data)
 print(document)
 
+
 def dfs(document) -> int:
     if isinstance(document, int):
         return document
@@ -27,6 +28,7 @@ def dfs(document) -> int:
     elif isinstance(document, dict):
         return sum(dfs(value) for value in document.values())
     return 0
+
 
 result = dfs(document)
 print(f"{result=}")
@@ -39,13 +41,12 @@ def dfs(document) -> int:
     elif isinstance(document, list):
         return sum(dfs(item) for item in document)
     elif isinstance(document, dict):
-        if 'red' in document.values():
+        if "red" in document.values():
             return 0
         return sum(dfs(value) for value in document.values())
     return 0
 
+
 result = dfs(document)
 print(f"{result=}")
 puzzle.answer_b = result
-
-

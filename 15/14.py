@@ -13,6 +13,7 @@ log = c.log
 puzzle = Puzzle(year=YEAR, day=DAY)
 c.rule(f"{puzzle.title} ({YEAR}-{DAY})")
 
+
 def distance(t: int, v: int, f: int, r: int):
     cycle_duration = f + r
     completed_cycles = t // cycle_duration
@@ -21,8 +22,12 @@ def distance(t: int, v: int, f: int, r: int):
     result = (completed_cycles * v * f) + (remainder_flight_seconds * v)
     return result
 
+
 import re
-line_re = re.compile(f"(\w+) can fly (\d+) km/s for (\d+) seconds, but then must rest for (\d+) seconds.")
+
+line_re = re.compile(
+    f"(\w+) can fly (\d+) km/s for (\d+) seconds, but then must rest for (\d+) seconds."
+)
 
 max_distance = 0
 TIME_POINT = 2503
@@ -35,6 +40,7 @@ print(f"{max_distance=}")
 puzzle.answer_a = max_distance
 
 c.rule()
+
 
 @attrs.frozen
 class Reindeer:
@@ -65,16 +71,18 @@ class Reindeer:
                 leaders = [contestant]
         return leaders
 
+
 contestants: list[Reindeer] = []
 for line in puzzle.input_data.splitlines():
     name, v, f, r = line_re.match(line).groups()
     contestants.append(Reindeer(name, int(v), int(f), int(r)))
 
 from collections import Counter
+
 leader_counter = Counter()
-for t in range(1, TIME_POINT+1):
+for t in range(1, TIME_POINT + 1):
     leader_counter.update(Reindeer.leaders_at(contestants, t))
 
 print(f"{leader_counter=}")
 winner, winning_points = leader_counter.most_common(1)[0]
-puzzle.answer_b=winning_points
+puzzle.answer_b = winning_points

@@ -1,4 +1,3 @@
-
 from more_itertools import chunked
 
 YEAR = 2021
